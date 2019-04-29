@@ -45,7 +45,7 @@
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
     <target name="CalculatorTest">
         <mkdir dir="${junit.output.dir}"/>
-    	<taskdef uri="antlib:org.jacoco.nat" resource="org/jacoco/ant/antlib.xml">
+    	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
     		<classpath path="../jacocoant.jar"/>
     	</taskdef>
     	<jacoco:coverage>
@@ -53,7 +53,7 @@
     			<formatter type="xml"/>
     			<test name="CalculatorTest" todir="${junit.output.dir}"/>
     			<jvmarg line="-ea"/>
-    			<classpath refid="Calculator.classath"/>
+    			<classpath refid="Calculator.classpath"/>
     		</junit>
     	</jacoco:coverage>
     	<jacoco:report>
